@@ -782,13 +782,7 @@ Course Information</p>
             <!-- Main Content Area -->
             <main class="course-content-area">
                 <div class="course-content">
-                    <p>Build your course using the visual editor. Insert media, code examples, and quiz modules from your library.</p><h6>Course Information</h6><p><br></p>
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-language">JS</span>
-          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
-        </div>
-        <pre><code class="language-js">import CryptoJS from &#39;crypto-js&#39;;
+                    <p>schoolOnline Course</p><h1>Create New Course</h1><p>Build your course using the visual editor. Insert media, code examples, and quiz modules from your library. Course Information</p><p>eventCreated: March 31, 2026</p><p>folder0 Resources</p><p>code2 Code Examples</p><p>quiz0 Quizzes</p><p>menu_bookContents</p><p><br></p><p>Build your course using the visual editor. Insert media, code examples, and quiz modules from your library.</p><h6>Course Information</h6><p><br></p><p>JSCopy</p><pre class="ql-syntax" spellcheck="false">import CryptoJS from 'crypto-js';
 
 class Steganography {
   // Encrypt text before hiding
@@ -812,7 +806,7 @@ class Steganography {
     const encryptedText = this.encryptText(text, password);
     
     // Convert text to binary
-    const binaryText = this.textToBinary(encryptedText + &#39;###&#39;); // ### as delimiter
+    const binaryText = this.textToBinary(encryptedText + '###'); // ### as delimiter
     let textIndex = 0;
     
     // Get image data
@@ -834,7 +828,7 @@ class Steganography {
   // Extract text from image
   static extractTextFromImage(imageData, password) {
     const data = imageData.data;
-    let binaryText = &#39;&#39;;
+    let binaryText = '';
     
     // Extract LSB from each pixel
     for (let i = 0; i &lt; data.length; i += 4) {
@@ -848,7 +842,7 @@ class Steganography {
     const extractedText = this.binaryToText(binaryText);
     
     // Find the delimiter
-    const delimiterIndex = extractedText.indexOf(&#39;###&#39;);
+    const delimiterIndex = extractedText.indexOf('###');
     if (delimiterIndex === -1) return null;
     
     const encryptedText = extractedText.substring(0, delimiterIndex);
@@ -859,50 +853,43 @@ class Steganography {
 
   // Helper: Convert text to binary
   static textToBinary(text) {
-    return text.split(&#39;&#39;).map(char =&gt; {
-      return char.charCodeAt(0).toString(2).padStart(8, &#39;0&#39;);
-    }).join(&#39;&#39;);
+    return text.split('').map(char =&gt; {
+      return char.charCodeAt(0).toString(2).padStart(8, '0');
+    }).join('');
   }
 
   // Helper: Convert binary to text
   static binaryToText(binary) {
     const bytes = binary.match(/.{1,8}/g);
-    if (!bytes) return &#39;&#39;;
+    if (!bytes) return '';
     
     return bytes.map(byte =&gt; {
       return String.fromCharCode(parseInt(byte, 2));
-    }).join(&#39;&#39;);
+    }).join('');
   }
 
   // Create downloadable image
-  static createDownloadableImage(canvas, filename = &#39;hidden-message.png&#39;) {
+  static createDownloadableImage(canvas, filename = 'hidden-message.png') {
     return new Promise((resolve) =&gt; {
       canvas.toBlob((blob) =&gt; {
         const url = URL.createObjectURL(blob);
-        const link = document.createElement(&#39;a&#39;);
+        const link = document.createElement('a');
         link.href = url;
         link.download = filename;
         link.click();
         URL.revokeObjectURL(url);
         resolve();
-      }, &#39;image/png&#39;);
+      }, 'image/png');
     });
   }
 }
 
-export default Steganography;</code></pre>
-      </div>
-    
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-language">HTML</span>
-          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
-        </div>
-        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
+export default Steganography;
+</pre><p>HTMLCopy</p><pre class="ql-syntax" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"&gt;
   &lt;title&gt;Meal Pass SRS · AediaX Tech&lt;/title&gt;
   &lt;!-- iOS style &amp; simple document feel --&gt;
   &lt;style&gt;
@@ -914,7 +901,7 @@ export default Steganography;</code></pre>
 
     body {
       background: #f5f5f7;  /* light iOS background */
-      font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: #1d1d1f;
       line-height: 1.47059;
       letter-spacing: -0.022em;
@@ -1097,7 +1084,7 @@ export default Steganography;</code></pre>
     }
 
     .barcode-example {
-      font-family: &#39;Courier New&#39;, monospace;
+      font-family: 'Courier New', monospace;
       background: #1d1d1f;
       color: #f5f5f7;
       padding: 1rem 1.8rem;
@@ -1126,23 +1113,23 @@ export default Steganography;</code></pre>
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div class=&quot;container&quot;&gt;
+  &lt;div class="container"&gt;
     &lt;!-- header with AediaX logo (inline placeholder) + company --&gt;
-    &lt;div class=&quot;header-bar&quot;&gt;
-      &lt;div class=&quot;logo&quot;&gt;
+    &lt;div class="header-bar"&gt;
+      &lt;div class="logo"&gt;
         &lt;!-- official AediaX logo from provided link --&gt;
-        &lt;img src=&quot;https://aediax.com/static/media/logo.fb254eb9a5d0c80f4f86.png&quot; alt=&quot;AediaX Tech logo&quot; onerror=&quot;this.src=&#39;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDgwIDQwIj48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDdBQUYiIC8+PHRleHQgeD0iMTIiIHk9IjI2IiBmb250LWZhbWlseT0iQXJpYWwiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE2Ij5BZWRpYVg8L3RleHQ+PC9zdmc+&#39;&quot;&gt;
+        &lt;img src="https://aediax.com/static/media/logo.fb254eb9a5d0c80f4f86.png" alt="AediaX Tech logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDgwIDQwIj48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDdBQUYiIC8+PHRleHQgeD0iMTIiIHk9IjI2IiBmb250LWZhbWlseT0iQXJpYWwiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjE2Ij5BZWRpYVg8L3RleHQ+PC9zdmc+'"&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;company-title&quot;&gt;
+      &lt;div class="company-title"&gt;
         &lt;h2&gt;AediaX Tech Private Limited&lt;/h2&gt;
         &lt;p&gt;Software requirements · Meal Pass System&lt;/p&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;document-badge&quot;&gt;SRS v1.0 · SAPL Industries&lt;/div&gt;
+      &lt;div class="document-badge"&gt;SRS v1.0 · SAPL Industries&lt;/div&gt;
     &lt;/div&gt;
 
     &lt;!-- main title --&gt;
     &lt;h1&gt;🍱 Meal Pass Management System&lt;/h1&gt;
-    &lt;p style=&quot;color:#6e6e73; margin-top: -0.2rem;&quot;&gt;SAPL Industries Pvt Ltd — 150 staff + 2000 workers&lt;/p&gt;
+    &lt;p style="color:#6e6e73; margin-top: -0.2rem;"&gt;SAPL Industries Pvt Ltd — 150 staff + 2000 workers&lt;/p&gt;
 
     &lt;!-- 1. Introduction --&gt;
     &lt;h2&gt;1. Introduction&lt;/h2&gt;
@@ -1150,10 +1137,10 @@ export default Steganography;</code></pre>
     &lt;p&gt;This document defines the requirements for the &lt;strong&gt;Meal Pass Management System&lt;/strong&gt; at SAPL Industries. The system manages employee meal access through barcode cards, tracks daily consumption, and integrates with attendance &amp; payroll deduction. It ensures accuracy, speed, transparency, and real‑time reporting.&lt;/p&gt;
 
     &lt;h3&gt;1.2 Scope&lt;/h3&gt;
-    &lt;p&gt;SAPL Industries has &lt;span class=&quot;badge&quot;&gt;150 Staff&lt;/span&gt; &lt;span class=&quot;badge&quot; style=&quot;background:#34c759;&quot;&gt;2000 Workers&lt;/span&gt; The system will allow meal access using barcode‑enabled cards, identify employees, prevent duplicate meals, record history, calculate payroll deductions, and generate reports. Offline operation with periodic cloud sync is supported.&lt;/p&gt;
+    &lt;p&gt;SAPL Industries has &lt;span class="badge"&gt;150 Staff&lt;/span&gt; &lt;span class="badge" style="background:#34c759;"&gt;2000 Workers&lt;/span&gt; The system will allow meal access using barcode‑enabled cards, identify employees, prevent duplicate meals, record history, calculate payroll deductions, and generate reports. Offline operation with periodic cloud sync is supported.&lt;/p&gt;
 
-    &lt;div class=&quot;section-card&quot;&gt;
-      &lt;h4 style=&quot;margin-top: 0;&quot;&gt;📋 Definitions&lt;/h4&gt;
+    &lt;div class="section-card"&gt;
+      &lt;h4 style="margin-top: 0;"&gt;📋 Definitions&lt;/h4&gt;
       &lt;table&gt;
         &lt;tr&gt;&lt;th&gt;Term&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
         &lt;tr&gt;&lt;td&gt;Employee&lt;/td&gt;&lt;td&gt;Worker or staff member registered in system&lt;/td&gt;&lt;/tr&gt;
@@ -1169,31 +1156,31 @@ export default Steganography;</code></pre>
     &lt;h2&gt;2. Overall Description&lt;/h2&gt;
     &lt;h3&gt;2.1 Product Perspective&lt;/h3&gt;
     &lt;p&gt;Three major components: &lt;strong&gt;Admin Panel&lt;/strong&gt; · &lt;strong&gt;Cafeteria Scan System&lt;/strong&gt; · &lt;strong&gt;Cloud Reporting&lt;/strong&gt;&lt;/p&gt;
-    &lt;div style=&quot;background:#f1f1f5; padding:1.2rem; border-radius:24px; font-family:monospace; margin:1rem 0;&quot;&gt;
+    &lt;div style="background:#f1f1f5; padding:1.2rem; border-radius:24px; font-family:monospace; margin:1rem 0;"&gt;
       Worker Card → Barcode Scanner → Local Scan System → Local Database → Cloud Sync → Admin Dashboard → Payroll Reports
     &lt;/div&gt;
 
     &lt;h3&gt;2.2 Product Functions&lt;/h3&gt;
-    &lt;ul class=&quot;insight-list&quot;&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;➕&lt;/span&gt; Employee Management – add, update, assign barcode, activate/deactivate&lt;/li&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;🍽️&lt;/span&gt; Meal Tracking – record breakfast/lunch, prevent duplicate meals&lt;/li&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;⚖️&lt;/span&gt; Daily rules – workers: breakfast 1x, lunch 1x (total 2 meals/day)&lt;/li&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;📊&lt;/span&gt; Reporting – daily/monthly consumption, payroll deduction export&lt;/li&gt;
+    &lt;ul class="insight-list"&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;➕&lt;/span&gt; Employee Management – add, update, assign barcode, activate/deactivate&lt;/li&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;🍽️&lt;/span&gt; Meal Tracking – record breakfast/lunch, prevent duplicate meals&lt;/li&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;⚖️&lt;/span&gt; Daily rules – workers: breakfast 1x, lunch 1x (total 2 meals/day)&lt;/li&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;📊&lt;/span&gt; Reporting – daily/monthly consumption, payroll deduction export&lt;/li&gt;
     &lt;/ul&gt;
 
     &lt;h3&gt;2.3 User Classes&lt;/h3&gt;
-    &lt;div class=&quot;grid-2&quot;&gt;
-      &lt;div style=&quot;background:#f9f9fb; padding:1.2rem; border-radius:20px;&quot;&gt;
-        &lt;div style=&quot;font-weight:600;&quot;&gt;👤 Admin (HR/management)&lt;/div&gt;
-        &lt;p style=&quot;font-size:0.95rem;&quot;&gt;Manage employee database, configure meal costs, view reports, export payroll data.&lt;/p&gt;
+    &lt;div class="grid-2"&gt;
+      &lt;div style="background:#f9f9fb; padding:1.2rem; border-radius:20px;"&gt;
+        &lt;div style="font-weight:600;"&gt;👤 Admin (HR/management)&lt;/div&gt;
+        &lt;p style="font-size:0.95rem;"&gt;Manage employee database, configure meal costs, view reports, export payroll data.&lt;/p&gt;
       &lt;/div&gt;
-      &lt;div style=&quot;background:#f9f9fb; padding:1.2rem; border-radius:20px;&quot;&gt;
-        &lt;div style=&quot;font-weight:600;&quot;&gt;🍴 Canteen Operator&lt;/div&gt;
-        &lt;p style=&quot;font-size:0.95rem;&quot;&gt;Scan employee cards, serve meals, monitor system – no data modification.&lt;/p&gt;
+      &lt;div style="background:#f9f9fb; padding:1.2rem; border-radius:20px;"&gt;
+        &lt;div style="font-weight:600;"&gt;🍴 Canteen Operator&lt;/div&gt;
+        &lt;p style="font-size:0.95rem;"&gt;Scan employee cards, serve meals, monitor system – no data modification.&lt;/p&gt;
       &lt;/div&gt;
-      &lt;div style=&quot;background:#f9f9fb; padding:1.2rem; border-radius:20px;&quot;&gt;
-        &lt;div style=&quot;font-weight:600;&quot;&gt;🧑‍🏭 Employee (Worker/Staff)&lt;/div&gt;
-        &lt;p style=&quot;font-size:0.95rem;&quot;&gt;Carry barcode card, scan during meal – no direct software interaction.&lt;/p&gt;
+      &lt;div style="background:#f9f9fb; padding:1.2rem; border-radius:20px;"&gt;
+        &lt;div style="font-weight:600;"&gt;🧑‍🏭 Employee (Worker/Staff)&lt;/div&gt;
+        &lt;p style="font-size:0.95rem;"&gt;Carry barcode card, scan during meal – no direct software interaction.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
 
@@ -1205,14 +1192,14 @@ export default Steganography;</code></pre>
 
     &lt;h3&gt;3.2 Barcode Card Integration&lt;/h3&gt;
     &lt;p&gt;Each employee receives a PVC card with unique barcode.&lt;/p&gt;
-    &lt;div class=&quot;barcode-example&quot;&gt;|| || W1023 ||&lt;/div&gt;
-    &lt;p style=&quot;font-family: monospace;&quot;&gt;Barcode scanners read employee ID (e.g., W1023).&lt;/p&gt;
+    &lt;div class="barcode-example"&gt;|| || W1023 ||&lt;/div&gt;
+    &lt;p style="font-family: monospace;"&gt;Barcode scanners read employee ID (e.g., W1023).&lt;/p&gt;
 
     &lt;h3&gt;3.3 Meal Scanning&lt;/h3&gt;
     &lt;p&gt;Process: scan → identify employee → check eligibility → record → confirmation.&lt;/p&gt;
-    &lt;div style=&quot;display:flex; gap:1rem; flex-wrap:wrap;&quot;&gt;
-      &lt;span class=&quot;chip&quot; style=&quot;background:#34c759; color:white;&quot;&gt;✅ Breakfast Approved&lt;/span&gt;
-      &lt;span class=&quot;chip&quot; style=&quot;background:#ff3b30; color:white;&quot;&gt;⛔ Breakfast Already Taken&lt;/span&gt;
+    &lt;div style="display:flex; gap:1rem; flex-wrap:wrap;"&gt;
+      &lt;span class="chip" style="background:#34c759; color:white;"&gt;✅ Breakfast Approved&lt;/span&gt;
+      &lt;span class="chip" style="background:#ff3b30; color:white;"&gt;⛔ Breakfast Already Taken&lt;/span&gt;
     &lt;/div&gt;
 
     &lt;h3&gt;3.4 Meal Limit Rules&lt;/h3&gt;
@@ -1231,11 +1218,11 @@ export default Steganography;</code></pre>
 
     &lt;h3&gt;3.7 Offline Operation&lt;/h3&gt;
     &lt;p&gt;Scan system uses local database (SQLite), records instantly, syncs to cloud when internet available. Zero interruption.&lt;/p&gt;
-    &lt;div class=&quot;note&quot;&gt;⚡ Supports low‑internet areas, fast scanning, no service downtime.&lt;/div&gt;
+    &lt;div class="note"&gt;⚡ Supports low‑internet areas, fast scanning, no service downtime.&lt;/div&gt;
 
     &lt;!-- 4 Non‑functional --&gt;
     &lt;h2&gt;4. Non‑Functional Requirements&lt;/h2&gt;
-    &lt;div class=&quot;grid-2&quot;&gt;
+    &lt;div class="grid-2"&gt;
       &lt;div&gt;&lt;strong&gt;⚡ Performance&lt;/strong&gt;&lt;br&gt;2000+ workers, scan &lt;1 sec, concurrent ops.&lt;/div&gt;
       &lt;div&gt;&lt;strong&gt;🔁 Reliability&lt;/strong&gt;&lt;br&gt;Works offline, no data loss, auto backup.&lt;/div&gt;
       &lt;div&gt;&lt;strong&gt;🔐 Security&lt;/strong&gt;&lt;br&gt;Auth, role‑based access, encrypted DB, secure cloud sync.&lt;/div&gt;
@@ -1255,13 +1242,13 @@ export default Steganography;</code></pre>
 
     &lt;!-- 6 Software stack --&gt;
     &lt;h2&gt;6. Software Requirements (recommended stack)&lt;/h2&gt;
-    &lt;div style=&quot;display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.2rem 0;&quot;&gt;
-      &lt;span class=&quot;chip&quot;&gt;React.js (frontend)&lt;/span&gt;
-      &lt;span class=&quot;chip&quot;&gt;Electron.js (desktop runtime)&lt;/span&gt;
-      &lt;span class=&quot;chip&quot;&gt;Node.js (backend)&lt;/span&gt;
-      &lt;span class=&quot;chip&quot;&gt;SQLite (local DB)&lt;/span&gt;
-      &lt;span class=&quot;chip&quot;&gt;Firebase Firestore (cloud)&lt;/span&gt;
-      &lt;span class=&quot;chip&quot;&gt;Firebase Auth&lt;/span&gt;
+    &lt;div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.2rem 0;"&gt;
+      &lt;span class="chip"&gt;React.js (frontend)&lt;/span&gt;
+      &lt;span class="chip"&gt;Electron.js (desktop runtime)&lt;/span&gt;
+      &lt;span class="chip"&gt;Node.js (backend)&lt;/span&gt;
+      &lt;span class="chip"&gt;SQLite (local DB)&lt;/span&gt;
+      &lt;span class="chip"&gt;Firebase Firestore (cloud)&lt;/span&gt;
+      &lt;span class="chip"&gt;Firebase Auth&lt;/span&gt;
     &lt;/div&gt;
 
     &lt;!-- 7 Timeline --&gt;
@@ -1278,38 +1265,30 @@ export default Steganography;</code></pre>
 
     &lt;!-- 8 Future enhancements --&gt;
     &lt;h2&gt;8. Future Enhancements&lt;/h2&gt;
-    &lt;ul style=&quot;display:flex; flex-wrap:wrap; gap:0.4rem 1rem;&quot;&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;📡 RFID card system&lt;/span&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;👤 Face recognition&lt;/span&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;📱 mobile app for employees&lt;/span&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;📊 AI analytics&lt;/span&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;span class=&quot;chip&quot;&gt;🧾 HRMS integration&lt;/span&gt;&lt;/li&gt;
+    &lt;ul style="display:flex; flex-wrap:wrap; gap:0.4rem 1rem;"&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;📡 RFID card system&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;👤 Face recognition&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;📱 mobile app for employees&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;📊 AI analytics&lt;/span&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;span class="chip"&gt;🧾 HRMS integration&lt;/span&gt;&lt;/li&gt;
     &lt;/ul&gt;
 
     &lt;!-- 9 Conclusion --&gt;
     &lt;h2&gt;9. Conclusion&lt;/h2&gt;
-    &lt;div class=&quot;section-card&quot; style=&quot;background: #eefbf5; border-left: 6px solid #34c759;&quot;&gt;
-      &lt;p style=&quot;font-size:1.1rem; margin-bottom:0;&quot;&gt;The Meal Pass System will provide SAPL Industries with efficient meal tracking, accurate payroll deduction, faster cafeteria service, reliable offline operation, and scalable architecture for future growth. Significant improvement in operational efficiency and transparency.&lt;/p&gt;
+    &lt;div class="section-card" style="background: #eefbf5; border-left: 6px solid #34c759;"&gt;
+      &lt;p style="font-size:1.1rem; margin-bottom:0;"&gt;The Meal Pass System will provide SAPL Industries with efficient meal tracking, accurate payroll deduction, faster cafeteria service, reliable offline operation, and scalable architecture for future growth. Significant improvement in operational efficiency and transparency.&lt;/p&gt;
     &lt;/div&gt;
 
     &lt;!-- footer as AediaX detail --&gt;
     &lt;hr&gt;
-    &lt;div style=&quot;display: flex; justify-content: space-between; align-items: center; color:#8e8e93; font-size:0.9rem;&quot;&gt;
+    &lt;div style="display: flex; justify-content: space-between; align-items: center; color:#8e8e93; font-size:0.9rem;"&gt;
       &lt;span&gt;© 2025 AediaX Tech Private Limited · SRS for SAPL Industries&lt;/span&gt;
-      &lt;span style=&quot;background: #f1f1f5; padding: 0.3rem 1rem; border-radius: 60px;&quot;&gt;version 1.0 · final&lt;/span&gt;
+      &lt;span style="background: #f1f1f5; padding: 0.3rem 1rem; border-radius: 60px;"&gt;version 1.0 · final&lt;/span&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-      </div>
-    
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-language">MD</span>
-          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
-        </div>
-        <pre><code class="language-md"># Meal Pass Management System - Software Requirements Specification (SRS)
+</pre><p>MDCopy</p><pre class="ql-syntax" spellcheck="false"># Meal Pass Management System - Software Requirements Specification (SRS)
 
 This repository contains the complete **Software Requirements Specification (SRS)** for the **Meal Pass Management System** designed for **SAPL Industries Pvt Ltd**. The document follows standard SRS structure and is presented in a clean, iOS-inspired webpage format.
 
@@ -1404,15 +1383,7 @@ AediaX Tech delivers innovative software solutions for industrial automation and
 ---
 
 *For more information about AediaX Tech solutions, visit [aediax.com](https://aediax.com)*
-</code></pre>
-      </div>
-    
-      <div class="code-block">
-        <div class="code-header">
-          <span class="code-language">CSS</span>
-          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
-        </div>
-        <pre><code class="language-css">.App {
+</pre><p>CSSCopy</p><pre class="ql-syntax" spellcheck="false">.App {
   text-align: center;
 }
 
@@ -1450,9 +1421,7 @@ AediaX Tech delivers innovative software solutions for industrial automation and
     transform: rotate(360deg);
   }
 }
-</code></pre>
-      </div>
-    
+</pre><p><br></p>
                     
                     
                 </div>
